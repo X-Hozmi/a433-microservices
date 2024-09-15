@@ -19,6 +19,9 @@ services:
     depends_on:
       - item-db
 
+    # Menambahkan restart policy
+    restart: always
+
   item-db:
     # Menggunakan image mongo:3 dari Docker Hub
     image: mongo:3
@@ -26,6 +29,9 @@ services:
     # Memakai volume bernama app-db dengan target /data/db di container
     volumes:
       - app-db:/data/db
+
+    # Menambahkan restart policy
+    restart: always
 
 # Membuat satu buah volume bernama app-db
 volumes:
